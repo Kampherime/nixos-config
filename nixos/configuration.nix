@@ -107,6 +107,7 @@
       home-manager
       neofetch
       git
+      gh
     ];
   programs.steam.enable = true;
 
