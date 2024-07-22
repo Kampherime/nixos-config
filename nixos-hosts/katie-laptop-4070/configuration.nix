@@ -64,17 +64,20 @@
   services.libinput.enable = true;
 
   # configuring oh my zsh :
-  programs = {
-    zsh = {
-      enable = true;
-      syntaxHighlighting.enable = true;
-      ohMyZsh = {
-        enable = true;
-	theme = "superjarin";
-	plugins = [ "git" "vi-mode" ];
-	};
-     };
-  };
+
+  programs.zsh.enable = true;
+
+  #programs = {
+  #  zsh = {
+  #    enable = true;
+  #    syntaxHighlighting.enable = true;
+  #    ohMyZsh = {
+  #      enable = true;
+  # theme = "superjarin";
+  # 	plugins = [ "git" "vi-mode" ];
+  # 	};
+  #   };
+  # };
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
