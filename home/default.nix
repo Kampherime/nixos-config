@@ -5,7 +5,8 @@
   # manage.
   imports = [
     ./terminal
-  ];
+    ];
+
 
   home = {
     username = "katie";
