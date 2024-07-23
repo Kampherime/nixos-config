@@ -43,18 +43,19 @@
   # };
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
+  services = {
+    xserver = { 
+      enable = true;
+      windowManager = {
+        qtile.enable = true;
+      };
+    }; 
     displayManager.sddm = {
       enable = true; 
       wayland.enable = true;
       #theme = smth };
       };
-    windowManager = {
-      qtile.enable = true;
-      };
     };
-    
 
   
   # Nvidia Drivers for xserver

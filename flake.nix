@@ -2,7 +2,12 @@
   description = "Flake...";
 
   inputs = {
+    
+    # WM 
     hyperland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    # Editor
+    nixvim.url = "github:nix-community/nixvim"; 
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05"; 
 

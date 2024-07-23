@@ -18,7 +18,7 @@
 
       # on hyprland startup
       exec-once = [ 
-        "waybar"
+	# "waybar"
 	]; 
 
       # bindings
@@ -27,7 +27,7 @@
         # SUPER = win key 
 	"SUPER,Q,exec,kitty"
 	"SUPER,W,killactive,"
-
+	# Need a SC program 
 
 	# Switching between windows
 
@@ -55,7 +55,8 @@
         "SUPER SHIFT, 0, movetoworkspacesilent, 10"
         "SUPER CTRL, c, movetoworkspace, empty"
 	];
-      monitor = ["eDP-1,2560x1600@165,0x0,1"
+      monitor = [
+		 "eDP-1,2560x1600@165,0x0,1"
                  "Unknown-1,disable"
 		];
     }; 
