@@ -8,7 +8,7 @@ programs.zsh = {
   oh-my-zsh = {
     enable = true;
     theme = "superjarin";
-    plugins = [ "git" "vi-mode" ];
+    plugins = [ "git" ];
     };
   };
 }
