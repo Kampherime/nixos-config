@@ -1,6 +1,6 @@
 {
   imports = [
-    ./kitty.nix
+    ./terminal.nix
     ./shell.nix
   ]; 
 }

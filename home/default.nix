@@ -5,6 +5,7 @@
   # manage.
   imports = [
     ./shell 
+    ./looks
     ];
 
 

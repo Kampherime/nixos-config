@@ -2,6 +2,8 @@
   description = "Flake...";
 
   inputs = {
+    hyperland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05"; 
 
     home-manager = { 
@@ -16,7 +18,8 @@
     nixosConfigurations = {
       katie-laptop-4070 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [
+          specialArgs = { inherit inputs; }; 
+	  modules = [
             ./nixos-hosts/katie-laptop-4070/configuration.nix
 
 	    home-manager.nixosModules.home-manager

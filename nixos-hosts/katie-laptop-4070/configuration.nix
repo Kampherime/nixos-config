@@ -6,7 +6,15 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
+      # My modules:
+      ../../system-config/wm.nix
+
+
+
+
+
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -35,8 +43,19 @@
   # };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.windowManager.qtile.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+      enable = true; 
+      wayland.enable = true;
+      #theme = smth };
+      };
+    windowManager = {
+      qtile.enable = true;
+      };
+    };
+    
+
   
   # Nvidia Drivers for xserver
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; 
@@ -111,6 +130,8 @@
       neofetch
       git
       gh
+      hyprland
+      hwinfo
     ];
   programs.steam.enable = true;
 
