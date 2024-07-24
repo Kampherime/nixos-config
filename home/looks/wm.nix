@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     hyprland
+    hyprshot
     ];
 
   wayland.windowManager.hyprland = {
@@ -27,6 +28,7 @@
         # SUPER = win key 
 	"SUPER,Q,exec,kitty"
 	"SUPER,W,killactive,"
+	"SUPER,P,exec,hyprshot -m region --clipboard-only"
 	# Need a SC program 
 
 	# Switching between windows

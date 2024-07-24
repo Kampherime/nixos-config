@@ -1,5 +1,12 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
+let
+  neovimconfig = import ./workspace;
+  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
+    inherit pkgs;
+    module = neovimconfig;
+  };
+in 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -7,6 +14,7 @@
     ./shell 
     ./looks
     ./workspace
+    inputs.nixvim.homeManagerModules.nixvim
     ];
 
 

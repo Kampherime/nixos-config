@@ -1,6 +1,6 @@
-{
 
+{
   imports = [ 
-    # tba
+    ./nixvim.nix
     ];
 } 
