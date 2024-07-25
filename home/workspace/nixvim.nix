@@ -1,3 +1,6 @@
+{ pkgs, ... }:
+
+
 {
     # tba colorscheme n configs 
 
@@ -6,6 +9,7 @@
       defaultEditor = true;
 
       colorschemes.kanagawa.enable = true;
+
       viAlias = true;
       vimAlias = true;
       
@@ -25,6 +29,11 @@
 	    "nix" "python" 
 	    ];
 	  };
+	
+	telescope = {
+	  enable = true;
+
+	};
       };
 
       opts = {
@@ -35,6 +44,6 @@
 	};
 
       #"+y yanking :3 
-      clipboard.providers.wl-copy.enable = true;
+      clipboard.providers.wl-copy.enable = true;  
     };
 }
