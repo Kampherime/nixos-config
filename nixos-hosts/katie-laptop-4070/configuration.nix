@@ -1,4 +1,5 @@
 # Edit this configuration file to define what should be installed on
+
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
@@ -62,6 +63,10 @@
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; 
   services.xserver.videoDrivers = [ "nvidia" ]; 
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   # For flakes
   nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
@@ -74,14 +79,36 @@
 
   # Enable sound.
   hardware.pulseaudio.enable = true;
+  # hardware.bluetooth.hsphfpd.enable = true;
   # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  #security.rtkit.enable = true;
+  #services.pipewire = {
+  #  enable = true;
+  #  alsa.enable = true;
+  #  alsa.support32Bit = true;
+  #  pulse.enable = true;
 
+  #  wireplumber.extraConfig.bluetoothEnhancements = {
+  #    "monitor.bluez.properties" = {
+  #      "bluez5.enable-sbc-xq" = true;
+  #      "bluez5.enable-msbc" = true;
+  #      "bluez5.enable-hw-volume" = true;
+  #      "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
+  #    };
+  #  };
+  # If you want to use JACK applications, uncomment this
+  #jack.enable = true;
+  # };
+  # pipewire
+
+  # If you want to use JACK applications, uncomment this
+  #jack.enable = true;
+
+  # use the example session manager (no others are packaged yet so this is enabled by default,
+  # no need to redefine it in your config for now)
+  #media-session.enable = true;
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+  services.libinput.enable = false;
 
   # configuring oh my zsh :
 
@@ -101,28 +128,14 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.katie = {
-      isNormalUser = true;
-      shell = pkgs.zsh;
-      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-      packages = with pkgs; [
-        firefox
-      ];
-    };
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
     environment.systemPackages = with pkgs; [
       neovim 
-      qtile
       kitty
       steam
       rofi 
-      picom
-      nitrogen
       discord
-      flameshot
-      xterm
       zsh
       oh-my-zsh
       lsd
@@ -133,9 +146,15 @@
       gh
       hyprland
       hwinfo
+      swww
+      wineWowPackages.stable
+      xwaylandvideobridge
+      bottles
+      clang
+      networkmanager
+      ghc
     ];
   programs.steam.enable = true;
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

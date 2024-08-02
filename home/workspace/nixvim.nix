@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-
+{ pkgs, ...}: 
 
 {
     # tba colorscheme n configs 
@@ -8,7 +7,9 @@
       enable = true;
       defaultEditor = true;
 
-      colorschemes.kanagawa.enable = true;
+      # colorschemes.gruvbox.enable = true;
+      extraPlugins = [ pkgs.vimPlugins.everforest ];
+      colorscheme = "everforest";
 
       viAlias = true;
       vimAlias = true;
@@ -19,6 +20,8 @@
 	  servers = {
 	    nixd.enable = true;
 	    pylyzer.enable = true;
+	    sourcekit.enable = true;
+	    hls.enable = true;
 	  };
         };
 
@@ -26,7 +29,7 @@
 	treesitter = {
 	  enable = true; 
 	  ensureInstalled = [ 
-	    "nix" "python" 
+	    "nix" "python" "c++" "haskell"
 	    ];
 	  };
 	
@@ -40,9 +43,10 @@
 	number = true;
 	relativenumber = true;
 
+	# everforest-transparent-background = 2;
+	# transparent-background = 1;
 	shiftwidth = 4;
 	};
-
       #"+y yanking :3 
       clipboard.providers.wl-copy.enable = true;  
     };

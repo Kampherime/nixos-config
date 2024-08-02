@@ -11,6 +11,8 @@
     nixvim.url = "github:nix-community/nixvim/nixos-24.05";
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05"; 
+    
+    swww.url = "github:LGFae/swww";
 
     home-manager = { 
       url = "github:nix-community/home-manager/release-24.05";

@@ -1,7 +1,7 @@
 
 {
   imports = [ 
-    ./nixvim.nix
     ./bindings.nix
+    ./nixvim.nix
     ];
 } 

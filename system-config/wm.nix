@@ -1,4 +1,7 @@
-{ inputs, pkgs, ...}: {
+{ pkgs, ...}: 
+
+{
+  
   programs.hyprland = { 
       enable = true;
     };
@@ -15,4 +18,13 @@
       opengl.enable = true;
       nvidia.modesetting.enable = true;
     };
+  users.users.katie = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [
+      firefox
+      ];
+    };
+  nixpkgs.config.allowUnfree = true;
 }
