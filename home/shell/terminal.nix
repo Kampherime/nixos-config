@@ -2,7 +2,7 @@
   programs = { 
     kitty = {
       enable = true;
-      theme = "Kanagawa";
+      theme = "Afterglow";
       font = {
         size = 15.0;
 	name = "monospace 11.0";

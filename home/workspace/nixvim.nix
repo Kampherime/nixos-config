@@ -7,10 +7,22 @@
       enable = true;
       defaultEditor = true;
 
-      # colorschemes.gruvbox.enable = true;
-      extraPlugins = [ pkgs.vimPlugins.everforest ];
-      colorscheme = "everforest";
-
+      colorschemes.kanagawa = {
+	enable = true;
+	settings = {
+	    transparent = true;
+	    colors = {
+		theme = {
+		    all = {
+			ui = {
+			    bg_gutter = "none";
+			    };
+			};
+		    };
+		};
+	    };
+	};
+      colorscheme = "kanagawa-dragon";
       viAlias = true;
       vimAlias = true;
       
@@ -22,6 +34,7 @@
 	    pylyzer.enable = true;
 	    sourcekit.enable = true;
 	    hls.enable = true;
+	    gopls.enable = true;
 	  };
         };
 
@@ -29,7 +42,7 @@
 	treesitter = {
 	  enable = true; 
 	  ensureInstalled = [ 
-	    "nix" "python" "c++" "haskell"
+	    "nix" "python" "c++" "haskell" "golang"
 	    ];
 	  };
 	
@@ -42,9 +55,6 @@
       opts = {
 	number = true;
 	relativenumber = true;
-
-	# everforest-transparent-background = 2;
-	# transparent-background = 1;
 	shiftwidth = 4;
 	};
       #"+y yanking :3 

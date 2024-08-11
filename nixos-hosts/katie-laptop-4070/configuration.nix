@@ -79,14 +79,14 @@
 
   # Enable sound.
   hardware.pulseaudio.enable = true;
-  # hardware.bluetooth.hsphfpd.enable = true;
+  #hardware.bluetooth.hsphfpd.enable = true;
   # OR
   #security.rtkit.enable = true;
   #services.pipewire = {
   #  enable = true;
   #  alsa.enable = true;
   #  alsa.support32Bit = true;
-  #  pulse.enable = true;
+  #   pulse.enable = true;
 
   #  wireplumber.extraConfig.bluetoothEnhancements = {
   #    "monitor.bluez.properties" = {
@@ -96,13 +96,9 @@
   #      "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
   #    };
   #  };
-  # If you want to use JACK applications, uncomment this
-  #jack.enable = true;
+    #    If you want to use JACK applications, uncomment this
+    #   jack.enable = true;
   # };
-  # pipewire
-
-  # If you want to use JACK applications, uncomment this
-  #jack.enable = true;
 
   # use the example session manager (no others are packaged yet so this is enabled by default,
   # no need to redefine it in your config for now)
@@ -148,13 +144,19 @@
       hwinfo
       swww
       wineWowPackages.stable
-      xwaylandvideobridge
       bottles
       clang
       networkmanager
       ghc
+      python3
+      lynx
+      go
+      nasm
     ];
   programs.steam.enable = true;
+  programs.xwayland.enable = true;
+
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

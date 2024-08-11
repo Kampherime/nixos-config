@@ -8,11 +8,12 @@
 
   wayland.windowManager.hyprland = {
     enable = true; 
+    xwayland.enable = true;
     settings = { 
     # decoration settings for hyprland
       decoration = {
         # corners
-        rounding = 0;
+        rounding = 5;
 	blur.enabled = false; 
 	};
  

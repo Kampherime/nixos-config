@@ -9,7 +9,7 @@ programs.zsh = {
 
   shellAliases = {
     nixtest = "sudo nixos-rebuild test";
-    nixupdate = "sudo nixos-rebuild switch";
+    nixbuild= "sudo nixos-rebuild switch";
     };
 
   oh-my-zsh = {
@@ -17,6 +17,6 @@ programs.zsh = {
     theme = "awesomepanda";
     plugins = [ "git" ];
     };
-  initExtra = "swww-daemon &\nswww img ~/Downloads/wallapapper!!!.jpg &";
+  initExtra = "swww-daemon &\nswww img ~/Downloads/AWDVAWK.jpg &";
   };
 }
