@@ -10,6 +10,7 @@
     [ 
       # My modules:
       ../../system-config/wm.nix
+      #../../system-config/chicago95.nix
 
 
 
@@ -22,7 +23,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "katie-laptop-4070"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -47,10 +48,15 @@
   services = {
     xserver = { 
       enable = true;
-      windowManager = {
-        qtile.enable = true;
+      #windowManager = {
+      #  qtile.enable = true;
+      #};
+
+    desktopManager ={
+	cde.enable = true;
+	xfce.enable = true;
       };
-    }; 
+    };
     displayManager.sddm = {
       enable = true; 
       wayland.enable = true;
@@ -152,6 +158,11 @@
       lynx
       go
       nasm
+      emacs
+      jdk 
+      graalvm-ce
+      maven
+      vscode
     ];
   programs.steam.enable = true;
   programs.xwayland.enable = true;

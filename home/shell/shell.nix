@@ -17,6 +17,6 @@ programs.zsh = {
     theme = "awesomepanda";
     plugins = [ "git" ];
     };
-  initExtra = "swww-daemon &\nswww img ~/Downloads/AWDVAWK.jpg &";
+  # initExtra = "swww-daemon &\nswww img ~/Downloads/AWDVAWK.jpg &";
   };
 }

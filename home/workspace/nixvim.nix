@@ -58,6 +58,6 @@
 	shiftwidth = 4;
 	};
       #"+y yanking :3 
-      clipboard.providers.wl-copy.enable = true;  
+      clipboard.providers.xclip.enable = true;  
     };
 }
